@@ -14,5 +14,5 @@
  * into multiple files (separation of concerns).
  * 
  * NOTE: As we have not covered path parameters with the HTTP module, you must make use of query parameters instead. You will also need to use the
- *       request body for sending payloads of data for creating or modifying resources on the API.
+ *       request body for sending payloads of data for creating or modifying resources on the API and the response body for returning data.
  */
