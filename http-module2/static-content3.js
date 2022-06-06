@@ -35,13 +35,20 @@ const notFound = (request, response) => {
 }
 
 const requestHandler = (request, response) => {
-    const url = URL.parse(request.url, false);
+    const url = URL.parse(request.url, false); // parse url into properties on an object, the second parameter false
+    // instructs the parse() function not to parse any query parameters, i.e, anything after a question mark in a URL ?key=value
 
     switch (url.pathname) {
         case "/":
             serve(request, response, "index.html");
             break;
-        // Exercise: Create a second route capable of serving an about.html page from the `static` folder
+        // Exercise: 
+        //   1. Create a second route capable of serving an about.html page from the `static` folder
+        //   2. Create a projects route which serves a project.html page from the `static` folder
+        //   3. Only GET requests should be valid to this web application, implement a way to return a 404
+        //      response whenever the request method is not a GET request.
+        //
+        //   Note: Pages should have content, whether simple Lorem Ipsum or your own text
         default:
             notFound(request, response);
             break;

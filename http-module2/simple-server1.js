@@ -6,8 +6,12 @@
 // the require keyword allows us to import a module in Nodejs
 const http = require('http');
 
-const host = 'localhost'; // 127.0.0.1 is also valid for localhost
-const port = 3000;
+const host = 'localhost'; // 127.0.0.1 is also valid for localhost, IPv4 address known as the 'local loopback address'
+const port = 3000; 
+// port for HTTP : 80
+// port for HTTPS: 443
+// - HTTPS requires a valid digital certificate signed by a Certificate Authority
+// - HTTPS encrypts the traffic that is sent in the request and response bodies
 
 // create the server and assign it a request handler
 // - the request handler is a callback function which accepts two parameters, request and response
