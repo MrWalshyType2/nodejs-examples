@@ -18,7 +18,7 @@ const notFound = (request, response) => {
 
 const info = (request, response) => {
     // parse the url
-    const url = URL.parse(request.url, true);
+    const url = URL.parse(request.url, true); // the second argument, true, indicates that we want the query parameters to be parsed into url.query
     // we can access query parameters via url.query
     // If the request was: localhost/info?country=England
     // - we can access country via url.query.country
@@ -33,6 +33,9 @@ const info = (request, response) => {
     
     // writing to a response does not send the response back
     response.write(`<p>The country is ${country}</p>`);
+
+    // we might have some processing to do before sending the response back,
+    // such as adding more HTML or data to the response
 
     // now send the response back
     response.end();
